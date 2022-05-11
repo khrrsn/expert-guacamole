@@ -4,12 +4,10 @@ on:
   push:
     tags:
       - '*'
-    branches:
-      - master
-      - production
 
 jobs:
   release:
+    if: ${{ github.event.base_ref == 'refs/heads/master' || github.event.base_ref == 'refs/heads/production'}}
     runs-on: ${{ matrix.os }}
 
     strategy:
