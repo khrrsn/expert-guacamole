@@ -28,5 +28,11 @@
   "linux": {
     "target": ["AppImage"],
     "artifactName": "${productName}-${version}-Installer.${ext}"
-  }
+  },
+  "publish": [
+    {
+      "provider": "generic",
+      "url": "https://storage.googleapis.com/electron-upload-bucket/desktop/${os}/",
+    },
+  ],
 }
