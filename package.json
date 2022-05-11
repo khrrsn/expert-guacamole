@@ -9,7 +9,8 @@
   "main": "dist/main/index.cjs",
   "scripts": {
     "dev": "node scripts/watch.mjs",
-    "build": "tsc --noEmit -p packages/renderer/tsconfig.json && node scripts/build.mjs && electron-builder"
+    "build": "node prod-test.js",
+    "build-staging": "node staging-test.js"
   },
   "engines": {
     "node": ">=14.17.0"
