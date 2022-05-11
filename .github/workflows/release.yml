@@ -2,12 +2,13 @@ name: Build/release
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - master
+      - production
 
 jobs:
   release:
-    if: ${{ github.event.base_ref == 'refs/heads/master' || github.event.base_ref == 'refs/heads/production' }}
+    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ${{ matrix.os }}
 
     strategy:
