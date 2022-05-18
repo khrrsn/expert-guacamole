@@ -35,5 +35,6 @@ jobs:
         uses: 'google-github-actions/upload-cloud-storage@v0'
         with:
           path: 'dist'
+          glob: '*'
           destination: ${{ (github.event.base_ref == 'refs/heads/production' && 'electron-upload-bucket/desktop') || 'electron-upload-bucket/desktop-staging' }}
           parent: false
